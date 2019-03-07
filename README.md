@@ -13,36 +13,44 @@ The dynamic json mapper needs five attributes.
 * "`<data>`" represents the location of your actual data
 
 mapping_template:
-```{
-                "Username_B_": {
-                    "Name_A_": "<data>"
-                },
-                "Studies_B_": {
-                    "Education_A_": ["", "<data>"]
-                },
-                "City_B_": {
-                    "Urban_B_": {
-                        "City_A_": {
-                            "Urban_A_": "<data>"
-                        }
-                    }
-                }
-            }
+```
+{
+  "Username_B_": {
+    "Name_A_": "<data>"
+  },
+  "Studies_B_": {
+    "Education_A_": [
+      "",
+      "<data>"
+    ]
+  },
+  "City_B_": {
+    "Urban_B_": {
+      "City_A_": {
+        "Urban_A_": "<data>"
+      }
+    }
+  }
+}
 ```            
 
 data_json:
-```{
-                "Name": "Karthikeyan",
-                "Education": ["B.E", "B.Sc"],
-                "City": {
-                    "Urban": "XYZ",
-                    "Rural": "ABC"
-                }
-            }
-        }
+```
+{
+  "Name": "Karthikeyan",
+  "Education": [
+    "B.E",
+    "B.Sc"
+  ],
+  "City": {
+    "Urban": "XYZ",
+    "Rural": "ABC"
+  }
+}
 ```
 Expected output of the above template
-```{
+```
+{
   'Username': 'Karthikeyan',
   'Studies': 'B.Sc',
   'City': {
