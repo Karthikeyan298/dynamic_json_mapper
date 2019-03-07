@@ -2,13 +2,18 @@
 This repo has the python script which can dynamically map json from one form to another with the given template
 
 
-The dynamic json mapper needs five attributes
-mapping template which describes how to map you source json to destination json
-Fields end with _B_ is the destination json.
-Fields end with _A_ is the source json.
-"<data>" represents the location of your actual data
+The dynamic json mapper needs five attributes.
 
-mapping_template = {
+* mapping template which describes how to map you source json to destination json.
+
+* Fields end with _B_ is the destination json.
+
+* Fields end with _A_ is the source json.
+
+* "`<data>`" represents the location of your actual data
+
+mapping_template:
+```{
                 "Username_B_": {
                     "Name_A_": "<data>"
                 },
@@ -23,8 +28,10 @@ mapping_template = {
                     }
                 }
             }
+```            
 
-data_json = {
+data_json:
+```{
                 "Name": "Karthikeyan",
                 "Education": ["B.E", "B.Sc"],
                 "City": {
@@ -33,13 +40,13 @@ data_json = {
                 }
             }
         }
-
+```
 Expected output of the above template
-{
+```{
   'Username': 'Karthikeyan',
   'Studies': 'B.Sc',
   'City': {
     'Urban': 'XYZ'
   }
 }
-
+```
